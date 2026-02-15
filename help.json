@@ -1,0 +1,12 @@
+{
+  "dev": "Start development server at localhost:4321",
+  "build": "Build the site for production (outputs to dist/)",
+  "preview": "Preview the production build locally",
+  "lint": "Run ESLint to check for code issues",
+  "lint:fix": "Run ESLint with auto-fix",
+  "format": "Format all code with Prettier",
+  "format:check": "Check code formatting without making changes",
+  "typecheck": "Run TypeScript type checking",
+  "test": "Run unit tests with Vitest",
+  "prepare": "Set up Husky git hooks (runs automatically on install)"
+}
