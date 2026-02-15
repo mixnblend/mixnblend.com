@@ -1,0 +1,32 @@
+---
+interface Props {
+  links: Array<{ href: string; label: string }>;
+  currentPath: string;
+}
+
+const { links, currentPath } = Astro.props;
+---
+
+<nav aria-label="Main navigation">
+  <ul class="flex flex-col gap-4 md:flex-row md:gap-6">
+    {
+      links.map((link) => {
+        const isActive = currentPath === link.href || currentPath.startsWith(link.href + '/');
+        return (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'text-lg font-medium transition-colors hover:text-primary',
+                isActive ? 'text-primary' : 'text-gray-700',
+              ]}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  platforms: Array<{
+    name: string;
+    url: string;
+    icon?: string;
+  }>;
+  size?: 'small' | 'medium' | 'large';
+}
+
+const { platforms, size = 'medium' } = Astro.props;
+
+const sizeClasses = {
+  small: 'text-sm',
+  medium: 'text-base',
+  large: 'text-lg',
+};
+---
+
+<div class="flex gap-4">
+  {
+    platforms.map((platform) => (
+      <a
+        href={platform.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'font-medium text-gray-700 transition-colors hover:text-primary',
+          sizeClasses[size],
+        ]}
+        aria-label={platform.name}
+      >
+        {platform.name}
+      </a>
+    ))
+  }
+</div>

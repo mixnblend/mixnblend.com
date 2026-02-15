@@ -1,0 +1,36 @@
+---
+interface Props {
+  platform: 'spotify' | 'bandcamp' | 'apple' | 'youtube';
+  embedId: string;
+  title: string;
+  height?: number;
+}
+
+const { platform, embedId, title, height = 380 } = Astro.props;
+
+const embedUrls = {
+  spotify: `https://open.spotify.com/embed/album/${embedId}`,
+  bandcamp: `https://bandcamp.com/EmbeddedPlayer/album=${embedId}/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/`,
+  apple: `https://embed.music.apple.com/us/album/${embedId}`,
+  youtube: `https://www.youtube.com/embed/${embedId}`,
+};
+
+const allowAttributes = {
+  spotify: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
+  bandcamp: 'encrypted-media',
+  apple: 'autoplay; encrypted-media',
+  youtube:
+    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+};
+---
+
+<div class="aspect-video w-full overflow-hidden rounded-lg bg-gray-100">
+  <iframe
+    src={embedUrls[platform]}
+    title={title}
+    width="100%"
+    height={height}
+    loading="lazy"
+    allow={allowAttributes[platform]}
+    class="h-full w-full border-0"></iframe>
+</div>

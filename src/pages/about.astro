@@ -2,35 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
 import BioSection from '../components/sections/BioSection.astro';
-import DiscographySection from '../components/sections/DiscographySection.astro';
-import NewsSection from '../components/sections/NewsSection.astro';
 
 const biographyContent = `
-  <h2>Mix n Blend</h2>
+  <h2>About Mix n Blend</h2>
   <p>
     Mix n Blend are here to bring the noise. Consisting of one of the baddest horn sections in the country in the form of Ross McDonald and Lee Thomson from seminal punk band Hog Hoggidy Hog (also doubling here on keys and guitar), cutting edge visuals supplied by Inka Kendzia of Krushed & Sorted fame, live samplers and effects controlled by Jon Arnold and Kevin Ribbans, and fronted alternately by EJ von Lyrik (formerly of Godessa) and Crosby Bolani (African Dope Soundsystem).
   </p>
   <p>
     Expect everything from easy skanking reggae to face melting dubstep from this double SAMA nominated act.
   </p>
+  <h3>Awards & Recognition</h3>
+  <ul>
+    <li>Double SAMA Nominated Act</li>
+  </ul>
 `;
 ---
 
 <Layout
-  title="Mix n Blend - South African Music Collective"
-  description="Mix n Blend - South African music collective creating a uniquely South African sound. Double SAMA nominated act."
+  title="About - Mix n Blend"
+  description="Learn about Mix n Blend, the South African music collective creating a uniquely South African sound."
 >
-  <Hero
-    title="Mix n Blend"
-    subtitle="South African Music Collective"
-    backgroundImage="/src/assets/images/band/hero.jpg"
-    ctaText="Listen Now"
-    ctaLink="/music"
+  <Hero title="About Mix n Blend" height="small" />
+
+  <BioSection
+    content={biographyContent}
+    image="/src/assets/images/band/about.jpg"
+    imageAlt="Mix n Blend band members performing live"
   />
-
-  <BioSection content={biographyContent} />
-
-  <DiscographySection limit={3} />
-
-  <NewsSection limit={3} />
 </Layout>
