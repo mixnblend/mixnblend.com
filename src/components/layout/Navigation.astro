@@ -11,7 +11,8 @@ const { links, currentPath } = Astro.props;
   <ul class="flex flex-col gap-4 md:flex-row md:gap-6">
     {
       links.map((link) => {
-        const isActive = currentPath === link.href || currentPath.startsWith(link.href + '/');
+        const isActive =
+          currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
         return (
           <li>
             <a
