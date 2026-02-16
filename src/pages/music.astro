@@ -1,30 +1,118 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import DiscographySection from '../components/sections/DiscographySection.astro';
+import AlbumCard from '../components/ui/AlbumCard.astro';
+import WaveDivider from '../components/ui/WaveDivider.astro';
+import StreamingLinks from '../components/ui/StreamingLinks.astro';
+
+const releases = await getCollection('releases');
+const sortedReleases = releases.sort((a, b) => b.data.year - a.data.year);
+
+const albums = sortedReleases.filter((r) => r.data.type === 'album');
+const eps = sortedReleases.filter((r) => r.data.type === 'ep');
+const singles = sortedReleases.filter((r) => r.data.type === 'single');
 ---
 
 <Layout
   title="Music - Mix n Blend"
-  description="Explore Mix n Blend's discography featuring reggae, hip hop, jazz, funk, and dubstep."
+  description="Explore Mix n Blend's complete discography from 2009 to present. Albums, EPs, and singles blending dub, reggae, drum n bass, funk, and more."
 >
-  <Hero title="Music" subtitle="Our Discography" height="small" />
+  <Hero title="discography" subtitle="All our releases from 2009 to present" height="medium" />
 
-  <DiscographySection />
+  <WaveDivider color="white" />
 
-  <section class="py-16 bg-gray-50">
+  {
+    albums.length > 0 && (
+      <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-brand-red">
+            albums
+          </h2>
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {albums.map((release) => (
+              <AlbumCard
+                title={release.data.title}
+                type={release.data.type}
+                releaseDate={release.data.releaseDate}
+                artwork={release.data.artwork}
+                slug={release.slug}
+                streamingLinks={release.data.streamingLinks}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <WaveDivider color="teal" flip={true} />
+
+  {
+    eps.length > 0 && (
+      <section class="bg-brand-teal py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-white">EPs</h2>
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {eps.map((release) => (
+              <AlbumCard
+                title={release.data.title}
+                type={release.data.type}
+                releaseDate={release.data.releaseDate}
+                artwork={release.data.artwork}
+                slug={release.slug}
+                streamingLinks={release.data.streamingLinks}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <WaveDivider color="off-white" />
+
+  {
+    singles.length > 0 && (
+      <section class="bg-brand-off-white py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-brand-blue">
+            singles
+          </h2>
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {singles.map((release) => (
+              <AlbumCard
+                title={release.data.title}
+                type={release.data.type}
+                releaseDate={release.data.releaseDate}
+                artwork={release.data.artwork}
+                slug={release.slug}
+                streamingLinks={release.data.streamingLinks}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <WaveDivider color="blue" flip={true} />
+
+  <section class="bg-brand-blue py-16">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-4">Find Us On Streaming Platforms</h2>
-      <p class="text-gray-600 mb-6">Listen to Mix n Blend on your favorite streaming service</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="https://www.discogs.com/artist/1358150-Mix-N-Blend"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-md font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-        >
-          Discogs
-        </a>
+      <h2 class="font-display mb-6 text-4xl font-bold lowercase text-white">
+        find us on streaming platforms
+      </h2>
+      <p class="mb-8 text-xl text-white/90">Listen to Mix n Blend on your favorite service</p>
+      <div class="flex justify-center">
+        <StreamingLinks
+          links={{
+            appleMusic: 'https://music.apple.com/za/artist/mix-n-blend/285190899',
+            bandcamp: 'https://mixnblend.bandcamp.com',
+            soundcloud: 'https://soundcloud.com/mixnblend',
+          }}
+          size="large"
+        />
       </div>
     </div>
   </section>

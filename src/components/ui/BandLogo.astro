@@ -1,0 +1,23 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-center gap-2 ${className}`}>
+  <div class="flex items-center gap-1">
+    <div
+      class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-red text-white shadow-md"
+    >
+      <span class="font-display text-xl font-bold lowercase">m</span>
+    </div>
+    <div
+      class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white shadow-md"
+    >
+      <span class="font-display text-xl font-bold lowercase">b</span>
+    </div>
+  </div>
+  <span class="font-display text-2xl font-bold lowercase text-brand-dark">mix n blend</span>
+</div>

@@ -1,0 +1,89 @@
+---
+interface Props {
+  links: {
+    spotify?: string;
+    appleMusic?: string;
+    apple?: string;
+    bandcamp?: string;
+    soundcloud?: string;
+    youtube?: string;
+  };
+  size?: 'small' | 'medium' | 'large';
+}
+
+const { links, size = 'medium' } = Astro.props;
+
+const sizeClasses = {
+  small: 'px-3 py-1 text-xs',
+  medium: 'px-4 py-2 text-sm',
+  large: 'px-6 py-3 text-base',
+};
+---
+
+<div class="flex flex-wrap gap-2">
+  {
+    links.spotify && (
+      <a
+        href={links.spotify}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`rounded-full bg-brand-teal font-semibold text-white transition-all hover:scale-105 hover:bg-brand-blue ${sizeClasses[size]}`}
+        aria-label="Listen on Spotify"
+      >
+        Spotify
+      </a>
+    )
+  }
+  {
+    (links.appleMusic || links.apple) && (
+      <a
+        href={links.appleMusic || links.apple}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`rounded-full bg-brand-red font-semibold text-white transition-all hover:scale-105 hover:bg-brand-coral ${sizeClasses[size]}`}
+        aria-label="Listen on Apple Music"
+      >
+        Apple Music
+      </a>
+    )
+  }
+  {
+    links.bandcamp && (
+      <a
+        href={links.bandcamp}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`rounded-full bg-brand-blue font-semibold text-white transition-all hover:scale-105 hover:bg-brand-purple ${sizeClasses[size]}`}
+        aria-label="Listen on Bandcamp"
+      >
+        Bandcamp
+      </a>
+    )
+  }
+  {
+    links.soundcloud && (
+      <a
+        href={links.soundcloud}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`rounded-full bg-brand-coral font-semibold text-white transition-all hover:scale-105 hover:bg-brand-red ${sizeClasses[size]}`}
+        aria-label="Listen on SoundCloud"
+      >
+        SoundCloud
+      </a>
+    )
+  }
+  {
+    links.youtube && (
+      <a
+        href={links.youtube}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`rounded-full bg-brand-purple font-semibold text-white transition-all hover:scale-105 hover:bg-brand-blue ${sizeClasses[size]}`}
+        aria-label="Watch on YouTube"
+      >
+        YouTube
+      </a>
+    )
+  }
+</div>

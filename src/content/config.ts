@@ -15,13 +15,17 @@ const releasesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     type: z.enum(['album', 'single', 'ep']),
+    year: z.number(),
     releaseDate: z.date(),
+    label: z.string().optional(),
     artwork: z.string(),
     streamingLinks: z
       .object({
         spotify: z.string().url().optional(),
         apple: z.string().url().optional(),
+        appleMusic: z.string().url().optional(),
         bandcamp: z.string().url().optional(),
+        soundcloud: z.string().url().optional(),
         youtube: z.string().url().optional(),
       })
       .optional(),
@@ -29,6 +33,7 @@ const releasesCollection = defineCollection({
       .object({
         spotify: z.string().optional(),
         bandcamp: z.string().optional(),
+        soundcloud: z.string().optional(),
       })
       .optional(),
     trackList: z
@@ -36,9 +41,12 @@ const releasesCollection = defineCollection({
         z.object({
           title: z.string(),
           duration: z.string(),
+          features: z.string().optional(),
         })
       )
       .optional(),
+    credits: z.string().optional(),
+    description: z.string().optional(),
   }),
 });
 

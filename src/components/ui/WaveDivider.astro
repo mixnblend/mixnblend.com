@@ -1,0 +1,32 @@
+---
+interface Props {
+  color?: 'teal' | 'blue' | 'yellow' | 'red' | 'white' | 'off-white';
+  flip?: boolean;
+}
+
+const { color = 'white', flip = false } = Astro.props;
+
+const colorMap = {
+  teal: '#2EC4B6',
+  blue: '#1A5DAB',
+  yellow: '#FFD23F',
+  red: '#C8232C',
+  white: '#FFFFFF',
+  'off-white': '#F5F5F0',
+};
+
+const fillColor = colorMap[color];
+---
+
+<div class={`w-full ${flip ? 'rotate-180' : ''}`}>
+  <svg
+    class="w-full"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style="height: 60px;"
+  >
+    <path d="M0,0 C300,90 900,90 1200,0 L1200,120 L0,120 Z" fill={fillColor} opacity="0.8"></path>
+    <path d="M0,20 C300,100 900,100 1200,20 L1200,120 L0,120 Z" fill={fillColor}></path>
+  </svg>
+</div>

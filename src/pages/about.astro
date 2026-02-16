@@ -1,32 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import BioSection from '../components/sections/BioSection.astro';
-
-const biographyContent = `
-  <h2>About Mix n Blend</h2>
-  <p>
-    Mix n Blend are here to bring the noise. Consisting of one of the baddest horn sections in the country in the form of Ross McDonald and Lee Thomson from seminal punk band Hog Hoggidy Hog (also doubling here on keys and guitar), cutting edge visuals supplied by Inka Kendzia of Krushed & Sorted fame, live samplers and effects controlled by Jon Arnold and Kevin Ribbans, and fronted alternately by EJ von Lyrik (formerly of Godessa) and Crosby Bolani (African Dope Soundsystem).
-  </p>
-  <p>
-    Expect everything from easy skanking reggae to face melting dubstep from this double SAMA nominated act.
-  </p>
-  <h3>Awards & Recognition</h3>
-  <ul>
-    <li>Double SAMA Nominated Act</li>
-  </ul>
-`;
+import WaveDivider from '../components/ui/WaveDivider.astro';
 ---
 
 <Layout
   title="About - Mix n Blend"
-  description="Learn about Mix n Blend, the South African music collective creating a uniquely South African sound."
+  description="Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town. Now a 9-piece live band from the African Dope Records family."
 >
-  <Hero title="About Mix n Blend" height="small" />
-
-  <BioSection
-    content={biographyContent}
-    image="/src/assets/images/band/about.jpg"
-    imageAlt="Mix n Blend band members performing live"
+  <Hero
+    title="about the band"
+    height="medium"
+    backgroundImage="/src/assets/images/band/about.jpg"
   />
+
+  <WaveDivider color="white" />
+
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-4xl">
+        <div class="prose prose-lg mx-auto font-body">
+          <p class="text-xl leading-relaxed">
+            Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town.
+            They were DJing, got bored of just two turntables and a mixer, bought more toys, and
+            started making their own tracks. Ross joined in 2008 and the three of them put out their
+            debut album "Look Mom No Hands" on African Dope Records the following year.
+          </p>
+          <p class="text-xl leading-relaxed">
+            Since then the project has grown into a 9-piece live band — horns, vocalists, a VJ,
+            drummer, guitarist — all people who do incredible things in their own right. No two live
+            sets are the same. They mash up whatever feels right on the night: dub, reggae, drum n
+            bass, funk, swing, glitch hop, and a whole bunch of other stuff.
+          </p>
+          <p class="text-xl leading-relaxed">
+            They've always been about collaboration. There are 20+ musicians on the debut album
+            alone. If you look at any golden age of music, it happens because people from different
+            backgrounds get together and make things. That's what the Cape Town scene has always
+            been about, and that's what Mix n Blend is about. Making music because they like making
+            music, and making sure everyone's having a good time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider color="blue" flip={true} />
+
+  <section class="bg-brand-blue py-16 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="font-display mb-12 text-center text-4xl font-bold lowercase">core members</h2>
+      <div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
+          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">
+            Jonathan Arnold
+          </h3>
+          <p class="mt-2 font-semibold text-brand-yellow">Jon</p>
+          <p class="mt-4 leading-relaxed">
+            Production, software, beats. Supreme nerd and professional software developer. Born in
+            PE, grew up in Grahamstown.
+          </p>
+        </div>
+        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
+          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">Kevin Ribbans</h3>
+          <p class="mt-2 font-semibold text-brand-yellow">Kev</p>
+          <p class="mt-4 leading-relaxed">
+            Production, beats, photography. Born in Johannesburg, grew up in Plettenberg Bay.
+          </p>
+        </div>
+        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
+          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">Ross Finck</h3>
+          <p class="mt-2 font-semibold text-brand-yellow">Sound nerd</p>
+          <p class="mt-4 leading-relaxed">
+            Sound, production. Joined 2008. Born and grew up in Johannesburg.
+          </p>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-lg">
+        Plus a rotating cast of collaborators and live musicians
+      </p>
+    </div>
+  </section>
+
+  <WaveDivider color="off-white" />
+
+  <section class="bg-brand-off-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display mb-6 text-4xl font-bold lowercase text-brand-red">
+          african dope records family
+        </h2>
+        <p class="font-body text-lg leading-relaxed text-brand-dark">
+          Mix n Blend was part of the African Dope Records stable — a legendary Cape Town label that
+          kick-started South Africa's electronic scene alongside acts like Sibot, Markus Wormstorm,
+          The Real Estate Agents, Felix la Band, Krushed & Sorted, and Goddessa.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold">
+          {
+            [
+              'electronic',
+              'nu disco',
+              'disco',
+              'drum n bass',
+              'funk',
+              'reggae',
+              'swing',
+              'glitch hop',
+              'dub',
+            ].map((genre) => (
+              <span class="rounded-full bg-brand-teal px-4 py-2 text-white">{genre}</span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

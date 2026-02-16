@@ -1,36 +1,114 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import BioSection from '../components/sections/BioSection.astro';
-import DiscographySection from '../components/sections/DiscographySection.astro';
-import NewsSection from '../components/sections/NewsSection.astro';
+import BandcampEmbed from '../components/ui/BandcampEmbed.astro';
+import AlbumCard from '../components/ui/AlbumCard.astro';
+import WaveDivider from '../components/ui/WaveDivider.astro';
 
-const biographyContent = `
-  <h2>Mix n Blend</h2>
-  <p>
-    Mix n Blend are here to bring the noise. Consisting of one of the baddest horn sections in the country in the form of Ross McDonald and Lee Thomson from seminal punk band Hog Hoggidy Hog (also doubling here on keys and guitar), cutting edge visuals supplied by Inka Kendzia of Krushed & Sorted fame, live samplers and effects controlled by Jon Arnold and Kevin Ribbans, and fronted alternately by EJ von Lyrik (formerly of Godessa) and Crosby Bolani (African Dope Soundsystem).
-  </p>
-  <p>
-    Expect everything from easy skanking reggae to face melting dubstep from this double SAMA nominated act.
-  </p>
-`;
+const releases = await getCollection('releases');
+const latestRelease = releases.find((r) => r.data.title === 'Drummers Always Cheat');
+const sortedReleases = releases.sort((a, b) => b.data.year - a.data.year).slice(0, 6);
 ---
 
 <Layout
-  title="Mix n Blend - South African Music Collective"
-  description="Mix n Blend - South African music collective creating a uniquely South African sound. Double SAMA nominated act."
+  title="Mix n Blend - Electronic Band from Cape Town"
+  description="Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town. Now a 9-piece live band blending dub, reggae, drum n bass, funk, swing, and glitch hop."
 >
   <Hero
-    title="Mix n Blend"
-    subtitle="South African Music Collective"
+    title="mix n blend"
+    subtitle="Electronic band from Cape Town"
     backgroundImage="/src/assets/images/band/hero.jpg"
-    ctaText="Listen Now"
-    ctaLink="/music/"
-  />
+    height="large"
+  >
+    <div class="mt-8 max-w-2xl mx-auto">
+      <BandcampEmbed trackId="3405298534" title="You Can" size="small" />
+    </div>
+  </Hero>
 
-  <BioSection content={biographyContent} />
+  <WaveDivider color="white" />
 
-  <DiscographySection limit={3} />
+  {
+    latestRelease && (
+      <section class="bg-brand-off-white py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="font-display text-center text-4xl font-bold lowercase text-brand-blue mb-8">
+            latest release
+          </h2>
+          <div class="mx-auto max-w-md">
+            <AlbumCard
+              title={latestRelease.data.title}
+              type={latestRelease.data.type}
+              releaseDate={latestRelease.data.releaseDate}
+              artwork={latestRelease.data.artwork}
+              slug={latestRelease.slug}
+              streamingLinks={latestRelease.data.streamingLinks}
+            />
+          </div>
+        </div>
+      </section>
+    )
+  }
 
-  <NewsSection limit={3} />
+  <WaveDivider color="teal" flip={true} />
+
+  <section class="bg-brand-teal py-16 text-white">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-4xl font-bold lowercase mb-6">about the band</h2>
+        <div class="font-body text-lg space-y-4 leading-relaxed">
+          <p>
+            Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town.
+            They were DJing, got bored of just two turntables and a mixer, bought more toys, and
+            started making their own tracks. Ross joined in 2008 and the three of them put out their
+            debut album "Look Mom No Hands" on African Dope Records the following year.
+          </p>
+          <p>
+            Since then the project has grown into a 9-piece live band — horns, vocalists, a VJ,
+            drummer, guitarist — all people who do incredible things in their own right. No two live
+            sets are the same. They mash up whatever feels right on the night: dub, reggae, drum n
+            bass, funk, swing, glitch hop, and a whole bunch of other stuff.
+          </p>
+          <a
+            href="/about/"
+            class="mt-6 inline-block rounded-full bg-brand-yellow px-6 py-3 font-semibold text-brand-dark transition-all hover:scale-105 hover:bg-brand-coral hover:text-white"
+          >
+            Read more about us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider color="white" flip={false} />
+
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="font-display text-center text-4xl font-bold lowercase text-brand-blue mb-8">
+        discography
+      </h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          sortedReleases.map((release) => (
+            <AlbumCard
+              title={release.data.title}
+              type={release.data.type}
+              releaseDate={release.data.releaseDate}
+              artwork={release.data.artwork}
+              slug={release.slug}
+              streamingLinks={release.data.streamingLinks}
+            />
+          ))
+        }
+      </div>
+      <div class="mt-10 text-center">
+        <a
+          href="/music/"
+          class="inline-block rounded-full bg-brand-blue px-8 py-3 font-display font-semibold lowercase text-white transition-all hover:scale-105 hover:bg-brand-red"
+        >
+          View all releases
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,50 @@
+---
+title: 'Look Mom, No Hands'
+type: 'album'
+year: 2009
+releaseDate: 2009-11-06
+label: 'African Dope Records'
+artwork: '/images/releases/look-mom-no-hands.jpg'
+streamingLinks:
+  appleMusic: 'https://music.apple.com/za/album/look-mom-no-hands/334925097'
+trackList:
+  - title: 'Bass Nitties'
+    duration: '2:40'
+  - title: 'Spring Step'
+    duration: '3:40'
+    features: 'feat. P.H.Fat'
+  - title: 'Shall We Swing'
+    duration: '4:49'
+    features: 'feat. Fletcher & Sindy'
+  - title: 'Morphed Code'
+    duration: '3:26'
+  - title: 'Lazy Friday Sounds'
+    duration: '4:40'
+    features: 'feat. Farrell Adams'
+  - title: 'Out of Line'
+    duration: '5:03'
+    features: 'feat. Farrell Adams'
+  - title: 'Sunday Afternoon Dub'
+    duration: '4:37'
+    features: 'feat. Pedro from 340ml'
+  - title: 'Sik Wid It'
+    duration: '3:25'
+  - title: 'First Light'
+    duration: '6:22'
+    features: 'feat. Rayelle Goodman'
+  - title: 'Drug in a Mug'
+    duration: '3:18'
+  - title: 'Outta Town'
+    duration: '5:02'
+    features: 'feat. Crosby'
+  - title: 'Tantrum'
+    duration: '4:13'
+    features: 'feat. EJ Von Lyrik & SFR'
+  - title: 'Champion Sound'
+    duration: '5:18'
+  - title: 'Full Ahead'
+    duration: '6:24'
+description: "The debut album. 14 tracks with contributions from 20+ musicians including members of 340ml and Goddessa, African Dope's Fletcher, and Farrell Adams. An hour of dub, drum n bass, funk, swing, and whatever else felt right at the time."
+---
+
+The debut album from Mix n Blend. Released on African Dope Records in 2009, this album features 14 tracks of genre-blending electronic music with collaborations from over 20 musicians.

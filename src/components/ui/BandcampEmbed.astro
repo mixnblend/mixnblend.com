@@ -1,0 +1,23 @@
+---
+interface Props {
+  trackId?: string;
+  albumId?: string;
+  title: string;
+  size?: 'small' | 'large';
+}
+
+const { trackId, albumId, title, size = 'large' } = Astro.props;
+
+const embedType = trackId ? 'track' : 'album';
+const embedId = trackId || albumId;
+
+const height = size === 'small' ? '120px' : '470px';
+const artwork = size === 'small' ? 'small' : 'large';
+---
+
+<iframe
+  style={`border: 0; width: 100%; height: ${height};`}
+  src={`https://bandcamp.com/EmbeddedPlayer/${embedType}=${embedId}/size=${size}/bgcol=ffffff/linkcol=1A5DAB/tracklist=false/artwork=${artwork}/transparent=true/`}
+  title={`${title} on Bandcamp`}
+  loading="lazy"
+  allow="encrypted-media"></iframe>

@@ -18,8 +18,8 @@ const { links, currentPath } = Astro.props;
             <a
               href={link.href}
               class:list={[
-                'text-lg font-medium transition-colors hover:text-primary',
-                isActive ? 'text-primary' : 'text-gray-700',
+                'font-display text-lg font-semibold lowercase transition-colors hover:text-brand-red',
+                isActive ? 'text-brand-blue' : 'text-brand-dark',
               ]}
               aria-current={isActive ? 'page' : undefined}
             >

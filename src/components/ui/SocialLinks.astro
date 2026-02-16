@@ -17,21 +17,34 @@ const sizeClasses = {
 };
 ---
 
-<div class="flex gap-4">
+<div class="flex flex-wrap gap-3">
   {
-    platforms.map((platform) => (
-      <a
-        href={platform.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class:list={[
-          'font-medium text-gray-700 transition-colors hover:text-primary',
-          sizeClasses[size],
-        ]}
-        aria-label={platform.name}
-      >
-        {platform.name}
-      </a>
-    ))
+    platforms.map((platform, index) => {
+      const colors = [
+        'bg-brand-red hover:bg-brand-coral',
+        'bg-brand-blue hover:bg-brand-purple',
+        'bg-brand-teal hover:bg-brand-blue',
+        'bg-brand-yellow hover:bg-brand-coral text-brand-dark',
+        'bg-brand-coral hover:bg-brand-red',
+        'bg-brand-purple hover:bg-brand-blue',
+      ];
+      const colorClass = colors[index % colors.length];
+
+      return (
+        <a
+          href={platform.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            'rounded-full px-4 py-2 font-semibold text-white transition-all hover:scale-105',
+            colorClass,
+            sizeClasses[size],
+          ]}
+          aria-label={platform.name}
+        >
+          {platform.name}
+        </a>
+      );
+    })
   }
 </div>

@@ -1,14 +1,76 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import ContactSection from '../components/sections/ContactSection.astro';
+import SocialLinks from '../components/ui/SocialLinks.astro';
+import WaveDivider from '../components/ui/WaveDivider.astro';
+
+const socialLinks = [
+  { name: 'Facebook', url: 'https://www.facebook.com/mixnblend/' },
+  { name: 'Instagram', url: 'https://www.instagram.com/mixnblendyo/' },
+  { name: 'Bandcamp', url: 'https://mixnblend.bandcamp.com' },
+  { name: 'SoundCloud', url: 'https://soundcloud.com/mixnblend' },
+  { name: 'Apple Music', url: 'https://music.apple.com/za/artist/mix-n-blend/285190899' },
+  { name: 'Twitter', url: 'https://twitter.com/mixnblendyo' },
+];
 ---
 
 <Layout
   title="Contact - Mix n Blend"
-  description="Get in touch with Mix n Blend for booking inquiries and press information"
+  description="Connect with Mix n Blend on social media. Follow us on Facebook, Instagram, Bandcamp, SoundCloud, and more."
 >
-  <Hero title="Contact" subtitle="Get In Touch" height="small" />
+  <Hero title="contact" subtitle="Get in touch" height="medium" />
 
-  <ContactSection />
+  <WaveDivider color="white" />
+
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display mb-6 text-4xl font-bold lowercase text-brand-blue">
+          connect with us
+        </h2>
+        <p class="font-body mb-12 text-xl text-brand-dark">
+          Follow us on social media for updates, live shows, and new releases
+        </p>
+        <SocialLinks platforms={socialLinks} size="large" />
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider color="teal" flip={true} />
+
+  <section class="bg-brand-teal py-16 text-white">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="font-display mb-6 text-4xl font-bold lowercase">booking & press</h2>
+        <div class="font-body text-lg leading-relaxed">
+          <p class="mb-6">
+            For booking inquiries, press information, or general questions, please reach out via our
+            social media channels.
+          </p>
+          <p class="text-white/90">
+            We're always up for collaborations and good vibes. Hit us up on Facebook or Instagram
+            and let's make something happen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider color="off-white" />
+
+  <section class="bg-brand-off-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display mb-6 text-4xl font-bold lowercase text-brand-red">
+          based in cape town
+        </h2>
+        <p class="font-body text-lg text-brand-dark">
+          Electronic band from Cape Town, South Africa
+        </p>
+        <p class="font-body mt-4 text-base text-gray-600">
+          Part of the African Dope Records family
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>

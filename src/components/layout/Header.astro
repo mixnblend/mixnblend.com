@@ -1,5 +1,6 @@
 ---
 import Navigation from './Navigation.astro';
+import BandLogo from '../ui/BandLogo.astro';
 
 interface Props {
   currentPath: string;
@@ -11,21 +12,21 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about/', label: 'About' },
   { href: '/music/', label: 'Music' },
-  { href: '/news/', label: 'News' },
+  { href: '/listen/', label: 'Listen' },
   { href: '/contact/', label: 'Contact' },
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
-  <div class="container mx-auto px-4 py-4">
+<header class="sticky top-0 z-50 border-b-2 border-brand-yellow bg-white shadow-md">
+  <div class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">
-        Mix n Blend
+      <a href="/" class="transition-transform hover:scale-105">
+        <BandLogo />
       </a>
 
       <button
         id="mobile-menu-toggle"
-        class="md:hidden p-2 text-gray-700 hover:text-primary"
+        class="md:hidden rounded-lg p-2 text-brand-blue hover:bg-brand-yellow transition-colors"
         aria-label="Toggle mobile menu"
         aria-expanded="false"
       >
