@@ -23,7 +23,6 @@ const releasesCollection = defineCollection({
       .object({
         spotify: z.string().url().optional(),
         apple: z.string().url().optional(),
-        appleMusic: z.string().url().optional(),
         bandcamp: z.string().url().optional(),
         soundcloud: z.string().url().optional(),
         youtube: z.string().url().optional(),

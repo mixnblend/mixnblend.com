@@ -1,7 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import StreamingEmbed from '../../components/ui/StreamingEmbed.astro';
+import AppleMusicEmbed from '../../components/ui/AppleMusicEmbed.astro';
+import StreamingLinks from '../../components/ui/StreamingLinks.astro';
+import WaveDivider from '../../components/ui/WaveDivider.astro';
 import { formatDate } from '../../utils/formatDate';
 
 export async function getStaticPaths() {
@@ -20,155 +22,155 @@ const typeLabels = {
   single: 'Single',
   ep: 'EP',
 };
+
+const typeColors = {
+  album: 'text-brand-red',
+  single: 'text-brand-blue',
+  ep: 'text-brand-teal',
+};
 ---
 
 <Layout
   title={`${release.data.title} - Mix n Blend`}
-  description={`${release.data.title} by Mix n Blend - ${typeLabels[release.data.type]} released ${formatDate(release.data.releaseDate)}`}
+  description={release.data.description ??
+    `${release.data.title} by Mix n Blend — ${typeLabels[release.data.type]} released ${formatDate(release.data.releaseDate)}`}
   image={release.data.artwork}
   type="website"
 >
-  <div class="py-16">
+  <div class="bg-brand-off-white py-10">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <a href="/music/" class="inline-flex items-center text-primary hover:underline mb-6">
-          <svg
-            class="w-4 h-4 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          Back to Music
-        </a>
+      <a
+        href="/music/"
+        class="inline-flex items-center gap-2 font-display font-semibold lowercase text-brand-blue transition-colors hover:text-brand-red"
+      >
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        all music
+      </a>
+    </div>
+  </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+  <WaveDivider color="white" />
+
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-5xl">
+        <div class="grid gap-10 md:grid-cols-2">
+          <!-- Artwork -->
           <div>
             <img
               src={release.data.artwork}
               alt={`${release.data.title} artwork`}
-              class="w-full rounded-lg shadow-lg"
+              class="shadow-playful w-full rounded-card"
             />
           </div>
 
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wide text-primary">
-              {typeLabels[release.data.type]}
-            </span>
-            <h1 class="mt-2 text-4xl font-bold text-gray-900">
-              {release.data.title}
-            </h1>
-            <time
-              datetime={release.data.releaseDate.toISOString()}
-              class="mt-2 block text-gray-500"
-            >
-              Released {formatDate(release.data.releaseDate)}
-            </time>
-
-            <div class="mt-6 prose prose-lg">
-              <Content />
+          <!-- Info -->
+          <div class="flex flex-col gap-4">
+            <div>
+              <span
+                class={`font-display text-sm font-bold uppercase tracking-widest ${typeColors[release.data.type]}`}
+              >
+                {typeLabels[release.data.type]}
+                {
+                  release.data.label && (
+                    <span class="ml-2 font-normal normal-case text-gray-400">
+                      · {release.data.label}
+                    </span>
+                  )
+                }
+              </span>
+              <h1
+                class="font-display mt-2 text-4xl font-bold lowercase text-brand-dark md:text-5xl"
+              >
+                {release.data.title}
+              </h1>
+              <time class="mt-1 block text-sm text-gray-500">
+                {release.data.year}
+              </time>
             </div>
 
             {
+              release.data.description && (
+                <p class="font-body text-lg leading-relaxed text-gray-700">
+                  {release.data.description}
+                </p>
+              )
+            }
+
+            {
+              release.data.credits && (
+                <p class="text-sm text-gray-500">
+                  <span class="font-semibold">Credits:</span> {release.data.credits}
+                </p>
+              )
+            }
+
+            <!-- Streaming links -->
+            {
+              release.data.streamingLinks && (
+                <div>
+                  <p class="mb-3 font-display text-sm font-bold uppercase tracking-widest text-gray-400">
+                    listen on
+                  </p>
+                  <StreamingLinks links={release.data.streamingLinks} size="medium" />
+                </div>
+              )
+            }
+
+            <!-- Track list -->
+            {
               release.data.trackList && (
-                <div class="mt-6">
-                  <h3 class="text-xl font-bold mb-3">Track List</h3>
+                <div>
+                  <p class="mb-3 font-display text-sm font-bold uppercase tracking-widest text-gray-400">
+                    tracklist
+                  </p>
                   <ol class="space-y-2">
                     {release.data.trackList.map((track, index) => (
-                      <li class="flex justify-between text-gray-700">
-                        <span>
-                          {index + 1}. {track.title}
+                      <li class="flex justify-between gap-4 border-b border-brand-warm-grey py-2 text-sm">
+                        <span class="text-brand-dark">
+                          <span class="mr-2 font-semibold text-brand-blue">{index + 1}.</span>
+                          {track.title}
+                          {track.features && (
+                            <span class="ml-1 text-gray-400">{track.features}</span>
+                          )}
                         </span>
-                        <span class="text-gray-500">{track.duration}</span>
+                        <span class="shrink-0 text-gray-400">{track.duration}</span>
                       </li>
                     ))}
                   </ol>
                 </div>
               )
             }
-
-            {
-              release.data.streamingLinks && (
-                <div class="mt-6">
-                  <h3 class="text-xl font-bold mb-3">Listen Now</h3>
-                  <div class="flex flex-wrap gap-3">
-                    {release.data.streamingLinks.spotify && (
-                      <a
-                        href={release.data.streamingLinks.spotify}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
-                      >
-                        Spotify
-                      </a>
-                    )}
-                    {release.data.streamingLinks.apple && (
-                      <a
-                        href={release.data.streamingLinks.apple}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
-                      >
-                        Apple Music
-                      </a>
-                    )}
-                    {release.data.streamingLinks.bandcamp && (
-                      <a
-                        href={release.data.streamingLinks.bandcamp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
-                      >
-                        Bandcamp
-                      </a>
-                    )}
-                    {release.data.streamingLinks.youtube && (
-                      <a
-                        href={release.data.streamingLinks.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
-                      >
-                        YouTube
-                      </a>
-                    )}
-                  </div>
-                </div>
-              )
-            }
           </div>
         </div>
 
+        <!-- Apple Music embed -->
         {
-          release.data.embeds && (
+          release.data.streamingLinks?.apple && (
             <div class="mt-12">
-              <h2 class="text-2xl font-bold mb-6">Listen</h2>
-              <div class="space-y-6">
-                {release.data.embeds.spotify && (
-                  <StreamingEmbed
-                    platform="spotify"
-                    embedId={release.data.embeds.spotify}
-                    title={`${release.data.title} on Spotify`}
-                  />
-                )}
-                {release.data.embeds.bandcamp && (
-                  <StreamingEmbed
-                    platform="bandcamp"
-                    embedId={release.data.embeds.bandcamp}
-                    title={`${release.data.title} on Bandcamp`}
-                  />
-                )}
-              </div>
+              <p class="mb-4 font-display text-sm font-bold uppercase tracking-widest text-gray-400">
+                preview
+              </p>
+              <AppleMusicEmbed
+                url={release.data.streamingLinks.apple}
+                title={release.data.title}
+                height={release.data.type === 'album' ? 450 : 175}
+              />
             </div>
           )
         }
+
+        <!-- Markdown body (if any extra content) -->
+        <div class="prose prose-lg mx-auto mt-10 font-body">
+          <Content />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </Layout>

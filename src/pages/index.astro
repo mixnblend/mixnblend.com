@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import BandcampEmbed from '../components/ui/BandcampEmbed.astro';
 import AlbumCard from '../components/ui/AlbumCard.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 
@@ -21,12 +20,23 @@ const sortedReleases = releases.sort((a, b) => b.data.year - a.data.year).slice(
     backgroundImage="/src/assets/images/band/hero.jpg"
     height="large"
   >
-    <div class="mt-8 max-w-2xl mx-auto">
-      <BandcampEmbed trackId="3405298534" title="You Can" size="small" />
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a
+        href="/listen/"
+        class="rounded-full bg-brand-red px-8 py-3 font-display font-semibold lowercase text-white transition-all hover:scale-105 hover:bg-brand-coral"
+      >
+        listen now
+      </a>
+      <a
+        href="/music/"
+        class="rounded-full bg-white/20 px-8 py-3 font-display font-semibold lowercase text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/30"
+      >
+        our music
+      </a>
     </div>
   </Hero>
 
-  <WaveDivider color="white" />
+  <WaveDivider color="off-white" />
 
   {
     latestRelease && (
@@ -80,14 +90,14 @@ const sortedReleases = releases.sort((a, b) => b.data.year - a.data.year).slice(
     </div>
   </section>
 
-  <WaveDivider color="white" flip={false} />
+  <WaveDivider color="white" />
 
   <section class="bg-white py-16">
     <div class="container mx-auto px-4">
       <h2 class="font-display text-center text-4xl font-bold lowercase text-brand-blue mb-8">
         discography
       </h2>
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="scrapbook-grid grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           sortedReleases.map((release) => (
             <AlbumCard

@@ -2,7 +2,6 @@
 interface Props {
   links: {
     spotify?: string;
-    appleMusic?: string;
     apple?: string;
     bandcamp?: string;
     soundcloud?: string;
@@ -35,9 +34,9 @@ const sizeClasses = {
     )
   }
   {
-    (links.appleMusic || links.apple) && (
+    links.apple && (
       <a
-        href={links.appleMusic || links.apple}
+        href={links.apple}
         target="_blank"
         rel="noopener noreferrer"
         class={`rounded-full bg-brand-red font-semibold text-white transition-all hover:scale-105 hover:bg-brand-coral ${sizeClasses[size]}`}

@@ -18,7 +18,12 @@ const singles = sortedReleases.filter((r) => r.data.type === 'single');
   title="Music - Mix n Blend"
   description="Explore Mix n Blend's complete discography from 2009 to present. Albums, EPs, and singles blending dub, reggae, drum n bass, funk, and more."
 >
-  <Hero title="discography" subtitle="All our releases from 2009 to present" height="medium" />
+  <Hero
+    title="discography"
+    subtitle="All our releases from 2009 to present"
+    height="medium"
+    backgroundImage="/src/assets/images/band/music-hero.jpg"
+  />
 
   <WaveDivider color="white" />
 
@@ -29,7 +34,7 @@ const singles = sortedReleases.filter((r) => r.data.type === 'single');
           <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-brand-red">
             albums
           </h2>
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="scrapbook-grid grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {albums.map((release) => (
               <AlbumCard
                 title={release.data.title}
@@ -53,7 +58,7 @@ const singles = sortedReleases.filter((r) => r.data.type === 'single');
       <section class="bg-brand-teal py-16">
         <div class="container mx-auto px-4">
           <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-white">EPs</h2>
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="scrapbook-grid grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {eps.map((release) => (
               <AlbumCard
                 title={release.data.title}
@@ -79,7 +84,7 @@ const singles = sortedReleases.filter((r) => r.data.type === 'single');
           <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-brand-blue">
             singles
           </h2>
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="scrapbook-grid grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {singles.map((release) => (
               <AlbumCard
                 title={release.data.title}
@@ -107,7 +112,7 @@ const singles = sortedReleases.filter((r) => r.data.type === 'single');
       <div class="flex justify-center">
         <StreamingLinks
           links={{
-            appleMusic: 'https://music.apple.com/za/artist/mix-n-blend/285190899',
+            apple: 'https://music.apple.com/za/artist/mix-n-blend/285190899',
             bandcamp: 'https://mixnblend.bandcamp.com',
             soundcloud: 'https://soundcloud.com/mixnblend',
           }}

@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = 'Mix n Blend - South African music collective creating a uniquely South African sound. Double SAMA nominated act.',
+  description = 'Mix n Blend - 9-piece electronic band from Cape Town. Blending dub, reggae, drum n bass, funk, swing, and glitch hop since 2001.',
   image = '/images/og-default.jpg',
   type = 'website',
 } = Astro.props;
@@ -25,9 +25,9 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MusicGroup',
   name: 'Mix n Blend',
-  genre: ['Reggae', 'Hip Hop', 'Jazz', 'Funk', 'Dubstep'],
+  genre: ['Electronic', 'Dub', 'Reggae', 'Drum and Bass', 'Funk', 'Nu Disco', 'Glitch Hop'],
   description:
-    'South African music collective creating a uniquely South African sound. Double SAMA nominated act.',
+    '9-piece electronic band from Cape Town. Blending dub, reggae, drum n bass, funk, swing, and glitch hop since 2001.',
   url: siteUrl,
   sameAs: [
     'https://www.facebook.com/mixnblend',
@@ -58,8 +58,9 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, siteUrl)} />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="color-scheme" content="light only" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

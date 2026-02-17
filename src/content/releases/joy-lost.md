@@ -5,7 +5,8 @@ year: 2011
 releaseDate: 2011-01-01
 artwork: '/images/releases/joy-lost.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/joy-lost/455246623'
+  apple: 'https://music.apple.com/za/album/joy-lost/455246623'
+  spotify: 'https://open.spotify.com/album/1p6eg4GyOCiSTmRLTH92yh'
 trackList:
   - title: 'Joy'
     duration: '4:30'

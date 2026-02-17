@@ -6,7 +6,7 @@ import WaveDivider from '../components/ui/WaveDivider.astro';
 
 <Layout
   title="About - Mix n Blend"
-  description="Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town. Now a 9-piece live band from the African Dope Records family."
+  description="Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town. Now a 9-piece live band blending dub, reggae, drum n bass, funk, swing, and glitch hop."
 >
   <Hero
     title="about the band"
@@ -18,26 +18,23 @@ import WaveDivider from '../components/ui/WaveDivider.astro';
 
   <section class="bg-white py-16">
     <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-4xl">
-        <div class="prose prose-lg mx-auto font-body">
-          <p class="text-xl leading-relaxed">
-            Mix n Blend started in 2001 when Jon and Kev began making beats together in Cape Town.
-            They were DJing, got bored of just two turntables and a mixer, bought more toys, and
-            started making their own tracks. Ross joined in 2008 and the three of them put out their
-            debut album "Look Mom No Hands" on African Dope Records the following year.
+      <div class="mx-auto max-w-3xl">
+        <div class="font-body space-y-6 text-xl leading-relaxed">
+          <p>15 years ago, we saw Krushed &amp; Sorted playing a show, and it changed our lives.</p>
+          <p>
+            Since then we've made music as a DJ and production duo, played countless gigs up and
+            down the country — everything from big band swing to drum &amp; bass. We've produced
+            music for a bunch of TV commercials.
           </p>
-          <p class="text-xl leading-relaxed">
-            Since then the project has grown into a 9-piece live band — horns, vocalists, a VJ,
-            drummer, guitarist — all people who do incredible things in their own right. No two live
-            sets are the same. They mash up whatever feels right on the night: dub, reggae, drum n
-            bass, funk, swing, glitch hop, and a whole bunch of other stuff.
+          <p>
+            We've morphed into a 9-piece band with one of the best horn sections out there, two
+            incredible vocalists, a VJ, a drummer and a guitarist who have all done incredible
+            things in their own right.
           </p>
-          <p class="text-xl leading-relaxed">
-            They've always been about collaboration. There are 20+ musicians on the debut album
-            alone. If you look at any golden age of music, it happens because people from different
-            backgrounds get together and make things. That's what the Cape Town scene has always
-            been about, and that's what Mix n Blend is about. Making music because they like making
-            music, and making sure everyone's having a good time.
+          <p>
+            We're a big musical family. We like to travel and we like to meet people through music
+            and have a good time. That's the purpose of life in the end — to connect with good
+            people, to share experiences with them, and to learn from them and to grow.
           </p>
         </div>
       </div>
@@ -48,36 +45,85 @@ import WaveDivider from '../components/ui/WaveDivider.astro';
 
   <section class="bg-brand-blue py-16 text-white">
     <div class="container mx-auto px-4">
-      <h2 class="font-display mb-12 text-center text-4xl font-bold lowercase">core members</h2>
-      <div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
-        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
-          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">
-            Jonathan Arnold
-          </h3>
-          <p class="mt-2 font-semibold text-brand-yellow">Jon</p>
-          <p class="mt-4 leading-relaxed">
-            Production, software, beats. Supreme nerd and professional software developer. Born in
-            PE, grew up in Grahamstown.
-          </p>
-        </div>
-        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
-          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">Kevin Ribbans</h3>
-          <p class="mt-2 font-semibold text-brand-yellow">Kev</p>
-          <p class="mt-4 leading-relaxed">
-            Production, beats, photography. Born in Johannesburg, grew up in Plettenberg Bay.
-          </p>
-        </div>
-        <div class="rounded-card bg-white/10 p-6 backdrop-blur-sm">
-          <h3 class="font-display text-2xl font-bold lowercase text-brand-yellow">Ross Finck</h3>
-          <p class="mt-2 font-semibold text-brand-yellow">Sound nerd</p>
-          <p class="mt-4 leading-relaxed">
-            Sound, production. Joined 2008. Born and grew up in Johannesburg.
-          </p>
-        </div>
+      <h2 class="font-display mb-12 text-center text-4xl font-bold lowercase">the band</h2>
+      <div class="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              name: 'Jonathan Arnold',
+              position: 'producer, saxophone',
+              img: '/images/band/jon.jpg',
+              bio: 'Jon started out playing sax and clarinet throughout school, before packing that in for a while and messing around with turntables and sequencers.',
+            },
+            {
+              name: 'Kevin Ribbans',
+              position: 'producer, samples',
+              img: '/images/band/kevin.jpg',
+              bio: 'Kevin grew up under the watchful eye of a mother who happened to be a concert pianist. He runs the heart of the band — the Ableton Live based electronic setup.',
+            },
+            {
+              name: 'EJ von Lyrik',
+              position: 'vocalist',
+              img: '/images/band/ej.jpg',
+              bio: 'EJ started out with the hip hop group Godessa. She moved onto a successful solo career before deciding to lend her considerable talents to Mix n Blend.',
+            },
+            {
+              name: 'Crosby Bolani',
+              position: 'vocalist',
+              img: '/images/band/crosby.jpg',
+              bio: "One of South Africa's greatest toasters, Crosby a.k.a Digianolog is straight out of Gugs.",
+            },
+            {
+              name: 'Lee Thomson',
+              position: 'trumpet',
+              img: '/images/band/lee.jpg',
+              bio: 'Lee aka "Lee Lips" Thomson is one of the most versatile horn players and musical personalities in this country. Member of veteran punk band Hog Hoggidy Hog and jazz-electronic outfit Closet Snare.',
+            },
+            {
+              name: 'Ross McDonald',
+              position: 'trombone',
+              img: '/images/band/ross-mcdonald.jpg',
+              bio: "Ross 'Da Bone' McDonald. He plays in Hog Hoggidy Hog and the Rudimentals aside from Mix n Blend, and runs the amazing studio Hey Papa Legend. In his spare time he pursues his other passion: beard growing.",
+            },
+            {
+              name: 'Callum McDonald',
+              position: 'guitarist',
+              img: '/images/band/callum.jpg',
+              bio: 'One of the youngest people ever to grace the stage of Rocking the Daisies, a man with a complete obsession for guitar, bass and gaming.',
+            },
+            {
+              name: 'Inka Kendzia',
+              position: 'VJ',
+              img: '/images/band/inka.jpg',
+              bio: "One of Cape Town and South Africa's foremost visual artists. Loves to nerd out on new tech, runs post production company MEME in Cape Town, and often beats Jon in spontaneous dance-offs.",
+            },
+            {
+              name: 'Sean Ou Tim',
+              position: 'drums',
+              img: '/images/band/sean.jpg',
+              bio: "Sean a.k.a Mr. Sakitumi. Has played in so many outfits down the years it's hard to know where to begin.",
+            },
+          ].map((member) => (
+            <div class="overflow-hidden rounded-card bg-white/10 backdrop-blur-sm">
+              <img
+                src={member.img}
+                alt={`${member.name} — ${member.position}`}
+                class="aspect-square w-full object-cover"
+                loading="lazy"
+              />
+              <div class="p-5">
+                <h3 class="font-display text-xl font-bold lowercase text-brand-yellow">
+                  {member.name}
+                </h3>
+                <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-white/60">
+                  {member.position}
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-white/90">{member.bio}</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      <p class="mt-8 text-center text-lg">
-        Plus a rotating cast of collaborators and live musicians
-      </p>
     </div>
   </section>
 
@@ -87,27 +133,26 @@ import WaveDivider from '../components/ui/WaveDivider.astro';
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-3xl text-center">
         <h2 class="font-display mb-6 text-4xl font-bold lowercase text-brand-red">
-          african dope records family
+          sounds like...
         </h2>
-        <p class="font-body text-lg leading-relaxed text-brand-dark">
-          Mix n Blend was part of the African Dope Records stable — a legendary Cape Town label that
-          kick-started South Africa's electronic scene alongside acts like Sibot, Markus Wormstorm,
-          The Real Estate Agents, Felix la Band, Krushed & Sorted, and Goddessa.
+        <p class="font-body mb-8 text-lg leading-relaxed text-brand-dark">
+          Whatever feels right. Genre tags are a bit of a necessary evil but if you need them, here
+          you go:
         </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm font-semibold">
+        <div class="flex flex-wrap justify-center gap-3 text-sm font-semibold">
           {
             [
-              'electronic',
-              'nu disco',
-              'disco',
-              'drum n bass',
-              'funk',
-              'reggae',
-              'swing',
-              'glitch hop',
-              'dub',
+              { label: 'electronic', color: 'bg-brand-blue text-white' },
+              { label: 'nu disco', color: 'bg-brand-red text-white' },
+              { label: 'disco', color: 'bg-brand-coral text-white' },
+              { label: 'drum n bass', color: 'bg-brand-purple text-white' },
+              { label: 'funk', color: 'bg-brand-yellow text-brand-dark' },
+              { label: 'reggae', color: 'bg-brand-teal text-white' },
+              { label: 'swing', color: 'bg-brand-red text-white' },
+              { label: 'glitch hop', color: 'bg-brand-blue text-white' },
+              { label: 'dub', color: 'bg-brand-purple text-white' },
             ].map((genre) => (
-              <span class="rounded-full bg-brand-teal px-4 py-2 text-white">{genre}</span>
+              <span class={`rounded-full px-4 py-2 ${genre.color}`}>{genre.label}</span>
             ))
           }
         </div>

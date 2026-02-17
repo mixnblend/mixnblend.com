@@ -5,8 +5,9 @@ year: 2016
 releaseDate: 2016-05-18
 artwork: '/images/releases/you-can.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/you-can-single/1104675041'
+  apple: 'https://music.apple.com/za/album/you-can-single/1104675041'
   bandcamp: 'https://mixnblend.bandcamp.com/track/you-can'
+  spotify: 'https://open.spotify.com/album/6Es5eJQgmq9WfasQxQBmvz'
 embeds:
   bandcamp: '3405298534'
 credits: 'J. Arnold, K. Ribbans, R. MacDonald, L. Thomson, E. Jones, C. MacDonald'

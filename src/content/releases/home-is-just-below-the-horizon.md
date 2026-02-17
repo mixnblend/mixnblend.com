@@ -5,7 +5,8 @@ year: 2019
 releaseDate: 2019-01-01
 artwork: '/images/releases/home-is-just-below-the-horizon.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/home-is-just-below-the-horizon-single/1489127325'
+  apple: 'https://music.apple.com/za/album/home-is-just-below-the-horizon-single/1489127325'
+  spotify: 'https://open.spotify.com/album/65h6Dure39uI3FUoKQ3nJh'
 description: 'A contemplative single exploring themes of journey and belonging.'
 ---
 

@@ -1,0 +1,20 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  height?: number;
+}
+
+const { url, title, height = 175 } = Astro.props;
+
+const embedUrl = url.replace('music.apple.com', 'embed.music.apple.com');
+---
+
+<iframe
+  allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+  height={height}
+  style={`width:100%;overflow:hidden;border-radius:16px;border:0;`}
+  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+  src={embedUrl}
+  title={`${title} on Apple Music`}
+  loading="lazy"></iframe>

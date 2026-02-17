@@ -1,65 +1,56 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
-import BandcampEmbed from '../components/ui/BandcampEmbed.astro';
+import AppleMusicEmbed from '../components/ui/AppleMusicEmbed.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import StreamingLinks from '../components/ui/StreamingLinks.astro';
+
+const releases = await getCollection('releases');
+const embeddable = releases
+  .filter((r) => r.data.streamingLinks?.apple)
+  .sort((a, b) => b.data.year - a.data.year);
 ---
 
 <Layout
   title="Listen - Mix n Blend"
-  description="Listen to Mix n Blend on Bandcamp, SoundCloud, Apple Music, and Spotify. Stream our music now."
+  description="Listen to Mix n Blend on Apple Music, Bandcamp, SoundCloud, and Spotify. Stream our music now."
 >
-  <Hero title="listen" subtitle="Stream our music" height="small" />
+  <Hero
+    title="listen"
+    subtitle="Stream our music"
+    height="medium"
+    backgroundImage="/src/assets/images/band/listen-hero.jpg"
+  />
 
   <WaveDivider color="white" />
 
   <section class="bg-white py-16">
     <div class="container mx-auto px-4">
-      <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-brand-blue">
-        featured tracks
+      <h2 class="font-display mb-12 text-center text-4xl font-bold lowercase text-brand-blue">
+        all releases
       </h2>
 
-      <div class="mx-auto max-w-3xl space-y-8">
-        <div>
-          <h3 class="font-display mb-4 text-2xl font-bold lowercase text-brand-red">
-            You Can (2016)
-          </h3>
-          <BandcampEmbed trackId="3405298534" title="You Can" size="small" />
-        </div>
+      <div class="mx-auto max-w-3xl space-y-10">
+        {
+          embeddable.map((release) => (
+            <div>
+              <h3 class="font-display mb-3 text-xl font-bold lowercase text-brand-dark">
+                {release.data.title}
+                <span class="ml-2 text-sm font-normal text-gray-500">{release.data.year}</span>
+              </h3>
+              <AppleMusicEmbed
+                url={release.data.streamingLinks!.apple!}
+                title={release.data.title}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <WaveDivider color="teal" flip={true} />
-
-  <section class="bg-brand-teal py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="font-display mb-8 text-center text-4xl font-bold lowercase text-white">
-        full albums on bandcamp
-      </h2>
-
-      <div class="mx-auto max-w-3xl space-y-12">
-        <div>
-          <h3 class="font-display mb-4 text-2xl font-bold lowercase text-brand-yellow">
-            Rebel Gun / Mercy (2014)
-          </h3>
-          <div class="overflow-hidden rounded-card bg-white">
-            <iframe
-              style="border: 0; width: 100%; height: 120px;"
-              src="https://bandcamp.com/EmbeddedPlayer/album=811486833/size=large/bgcol=ffffff/linkcol=1A5DAB/tracklist=false/artwork=small/transparent=true/"
-              seamless
-              title="Rebel Gun / Mercy on Bandcamp"
-              loading="lazy"
-            >
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <WaveDivider color="blue" />
+  <WaveDivider color="blue" flip={true} />
 
   <section class="bg-brand-blue py-16">
     <div class="container mx-auto px-4 text-center">
@@ -68,7 +59,7 @@ import StreamingLinks from '../components/ui/StreamingLinks.astro';
       <div class="flex justify-center">
         <StreamingLinks
           links={{
-            appleMusic: 'https://music.apple.com/za/artist/mix-n-blend/285190899',
+            apple: 'https://music.apple.com/za/artist/mix-n-blend/285190899',
             bandcamp: 'https://mixnblend.bandcamp.com',
             soundcloud: 'https://soundcloud.com/mixnblend',
           }}

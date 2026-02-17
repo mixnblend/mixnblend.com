@@ -6,7 +6,8 @@ releaseDate: 2010-05-05
 label: 'African Dope Records'
 artwork: '/images/releases/look-mom-no-hands-remixes-vol-1.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/look-mom-no-hands-remixes-vol-1-ep/365374963'
+  apple: 'https://music.apple.com/za/album/look-mom-no-hands-remixes-vol-1-ep/365374963'
+  spotify: 'https://open.spotify.com/album/1jNF9r9xg5T5twnO9upxC9'
 trackList:
   - title: 'Shall We Swing (Liver Remix)'
     duration: '4:42'

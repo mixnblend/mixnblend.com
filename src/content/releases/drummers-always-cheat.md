@@ -5,7 +5,8 @@ year: 2020
 releaseDate: 2020-01-01
 artwork: '/images/releases/drummers-always-cheat.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/drummers-always-cheat-feat-hawkword-single/1501622452'
+  apple: 'https://music.apple.com/za/album/drummers-always-cheat-feat-hawkword-single/1501622452'
+  spotify: 'https://open.spotify.com/album/1t7ZnrYgiUSjx4XbiWxyk5'
 trackList:
   - title: 'Drummers Always Cheat'
     duration: '4:45'

@@ -6,7 +6,8 @@ releaseDate: 2009-11-06
 label: 'African Dope Records'
 artwork: '/images/releases/look-mom-no-hands.jpg'
 streamingLinks:
-  appleMusic: 'https://music.apple.com/za/album/look-mom-no-hands/334925097'
+  apple: 'https://music.apple.com/za/album/look-mom-no-hands/334925097'
+  spotify: 'https://open.spotify.com/album/3DKVabgLlXYt15QiVC11mf'
 trackList:
   - title: 'Bass Nitties'
     duration: '2:40'
