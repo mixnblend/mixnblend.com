@@ -11,4 +11,5 @@ description: 'Collaboration with Narch. Features "I Got... (Original)" also remi
 credits: 'Mix n Blend & Narch'
 ---
 
-A collaborative EP with Narch, featuring the track "I Got..." which was later remixed by Beats Antique.
+We made this track together with our friend Narch from P.H. Fat called "I Got"
+which Beats Antique made an amazing remix of.

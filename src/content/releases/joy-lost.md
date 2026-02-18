@@ -21,4 +21,6 @@ trackList:
 description: 'Four-track EP exploring different sonic territories, featuring collaborations with Crosby and Bosko Popovac.'
 ---
 
-A four-track EP that showcases Mix n Blend's range, from uplifting anthems to darker experimental sounds.
+This started cos Kev and Jon were messing around with a Moog Little Phatty in Red Bull studios when Crosby walked in and started singing
+'Jump up for joy, jump up and down', over the riff they were playing. Narona we named after our favourite hangout at the time, our friend
+Bosko's restaurant. He was in a band called the beams, and put some guitar down that we love on it.

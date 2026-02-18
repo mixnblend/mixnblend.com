@@ -18,4 +18,7 @@ trackList:
 description: 'Double A-side single featuring vocalists Sannie Fox and Yaelle Trules.'
 ---
 
-A powerful double single featuring soulful vocals over Mix n Blend's signature blend of electronic genres.
+We've always wanted to work with Sannie Fox, so getting to make dub with here that's moody and beautiful was super dope.
+
+Yaelle Trules kinda blew us away when we hauled ourselves out of bed on the second morning of Sakifo to go and watch people play amazing music down by the sea.
+We're so lucky we got to make this track with her.

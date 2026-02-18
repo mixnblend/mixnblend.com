@@ -5,5 +5,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://www.mixnblend.com',
+  server: { host: '0.0.0.0', port: 4321 },
   trailingSlash: 'always',
 });

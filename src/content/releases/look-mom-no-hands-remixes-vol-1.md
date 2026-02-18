@@ -24,4 +24,7 @@ trackList:
 description: 'Remixes of tracks from the debut album Look Mom No Hands by Liver, Hyphen & SFR, Bioscope, and Fletcher.'
 ---
 
-A collection of remixes from the debut album, featuring reimaginations by some of the African Dope Records crew.
+A collection of remixes from our debut album, featuring reimaginations by our friends SFR and Hyphen and Fletcher, as well as Richard Rumney.
+Alex Wright, aka Liver made one of our favourite remixes of Shall we Swing, which got the attention of Boom Monk Ben from Ninja Tune, and in a weird
+sequence of events, we were still re-recording the vocals for Outta Town when Jules and Al-John started remixing it, so if you listen to the original
+you'll hear Crosby go "Big up Hyphen and SFR pon the remix".

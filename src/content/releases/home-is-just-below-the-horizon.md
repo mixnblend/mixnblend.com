@@ -10,4 +10,5 @@ streamingLinks:
 description: 'A contemplative single exploring themes of journey and belonging.'
 ---
 
-A single that showcases Mix n Blend's more introspective side, blending ambient textures with their signature groove.
+We wanted to make something downtempo and a little spacy for a change. Mikey Saal, who did the artwork for our Album, made something super cool for us again.
+Thank you Mikey.

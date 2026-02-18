@@ -14,4 +14,4 @@ trackList:
 description: 'Latest single featuring Hawkword, blending electronic production with live instrumentation.'
 ---
 
-The latest release from Mix n Blend, featuring collaboration with Hawkword. A playful title for a track that showcases the full 9-piece band's energy.
+The latest release from us, featuring our friends Hawkword. Lot's of fun to make, one of our friend's who is a drummer suggested the title.

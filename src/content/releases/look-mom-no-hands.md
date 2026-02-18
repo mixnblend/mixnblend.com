@@ -49,3 +49,5 @@ description: "The debut album. 14 tracks with contributions from 20+ musicians i
 ---
 
 The debut album from Mix n Blend. Released on African Dope Records in 2009, this album features 14 tracks of genre-blending electronic music with collaborations from over 20 musicians.
+
+Blah blah. We named the album accurately. We thought this is what you say right before you fall off your bike. We didn't fall full off, but we still haven't finished that second album.

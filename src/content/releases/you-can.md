@@ -10,8 +10,12 @@ streamingLinks:
   spotify: 'https://open.spotify.com/album/6Es5eJQgmq9WfasQxQBmvz'
 embeds:
   bandcamp: '3405298534'
-credits: 'J. Arnold, K. Ribbans, R. MacDonald, L. Thomson, E. Jones, C. MacDonald'
+credits: 'J. Arnold, K. Ribbans, R. McDonald, L. Thomson, E. Jones, C. McDonald'
 description: 'First track from the album When Life Gets in the Way. An uplifting anthem with infectious energy.'
 ---
 
-The first single from the unreleased album "When Life Gets in the Way", featuring collaborative production from the extended Mix n Blend crew.
+Ross, our trombone player hadn't had the opportunity to be a lead vocalist before. We were messing around in studio and came up with the riff for this
+on a Juno-60, and had never done anything disco-ey before.
+
+So much fun to just mess around in a room with good friends, walk out, go get some food, come back and find a horn section being laid down. I wish I could
+spend every day like that.

@@ -24,4 +24,5 @@ description: 'Various Artists compilation EP on Skanky Panky Records. Features M
 credits: 'Various Artists'
 ---
 
-A compilation EP featuring Mix n Blend's track "Get Crunk Wit Jesus" alongside tracks from J.Me.J, Fredo, ASM, Six Am, and William Breakspear.
+We had some friends in the UK who had this record label they started, and Ross had made this track which fit perfectly on one of their first releases.
+Thank you guys.
